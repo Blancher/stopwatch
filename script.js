@@ -2,15 +2,16 @@
 
 const startStopBtn = document.querySelector('#startStopBtn');
 const resetBtn = document.querySelector('#resetBtn');
+const displayTimer = document.querySelector('#timer');
+const audio = document.querySelector('audio');
 
 // Times
 
 let ms = 0;
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
+let seconds = 55;
+let minutes = 59;
+let hours = 99;
 let interval;
-let displayTimer = document.querySelector('#timer');
 
 // Stopwatch
 
@@ -27,6 +28,10 @@ function stopWatch() {
     if (minutes / 60 === 1) {
         minutes = 0;
         hours++;
+    }
+    if (hours === 100) {
+        audio.play();
+        audio.loop = true;
     }
     function addZeroes(time) {
         if ((`${time}0`).length > 2) {
