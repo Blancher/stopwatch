@@ -8,9 +8,9 @@ const audio = document.querySelector('audio');
 // Times
 
 let ms = 0;
-let seconds = 55;
-let minutes = 59;
-let hours = 99;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
 let interval;
 
 // Stopwatch
